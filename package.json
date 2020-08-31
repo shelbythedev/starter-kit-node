@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Starter kit boilerplace that I use for most all of my JS projects.",
   "scripts": {
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "ngrok": "ngrok http 3000",

@@ -1,6 +1,7 @@
 import express from 'express'
 import path from 'path'
 import compression from 'compression'
+import chalk from 'chalk'
 
 /* eslint-disable no-console */
 
