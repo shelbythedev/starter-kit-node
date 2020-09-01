@@ -45,7 +45,8 @@ export default {
         minifyCSS: true,
         minifyURLs: true
       },
-      inject: true
+      inject: true,
+      sentryIntegrityHash: 'sha384-HfEJlGrJtFM0B01Wt4sGzTbxWqLMcMeGAXCbyQyB+iK9BhnDmNAtIGovhekIQOa2'
     }),
 
     // Eliminate duplicate packages when generating bundle

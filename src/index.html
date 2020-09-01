@@ -1,9 +1,24 @@
+<!--
+  **NOTE:** This is a template for index.html.
+  It uses EJS and htmlWebpackPlugin to generate a different index.html for each environment.
+  Generated bundle have hash-based filenames, so it's necessary to add references dynamically.
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+
+  <% if (htmlWebpackPlugin.options.sentryIntegrityHash) { %>
+    <script
+      src="https://browser.sentry-cdn.com/5.22.3/bundle.tracing.min.js"
+      integrity='<% htmlWebpackPlugin.options.sentryIntegrityHash %>'
+      crossorigin="anonymous"
+    ></script>
+  <% } %>
+
+  <meta charset="UTF-8">
 </head>
 <body>
-    <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
 </body>
 </html>
