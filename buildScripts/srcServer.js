@@ -2,12 +2,15 @@ import express from 'express'
 import path from 'path'
 import webpack from 'webpack'
 import config from '../webpack.config.dev'
+import cors from 'cors'
 
 /* eslint-disable no-console */
 
 const port = 3000
 const app = express()
 const compiler = webpack(config)
+
+app.use(cors())
 
 app.use(require('webpack-dev-middleware') (compiler, {
   noInfo: true,
